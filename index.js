@@ -71,20 +71,19 @@ class ArgumentError extends Error {
 function argc(arg, ...predicates) {
     const callStackFrames = callsites();
     const argumentLabel = inferLabel(callStackFrames) || "arg";
-    const functionName = callStackFrames[1].getFunctionName();
 
     for (const predicate of predicates) {
         if (Array.isArray(predicate)) {
             const ret = predicate.some((fn) => fn(arg));
             if (!ret) {
-                throw new ArgumentError(`'${argumentLabel}' of '${functionName}' function doesn't match his predicate(s)`);
+                throw new ArgumentError(`'${argumentLabel}' doesn't match his predicate(s)`);
             }
         }
         else if (typeof predicate !== "function") {
             continue;
         }
         else if (!predicate(arg)) {
-            throw new ArgumentError(`'${argumentLabel}' of '${functionName}' function doesn't match his predicate(s)`);
+            throw new ArgumentError(`'${argumentLabel}' doesn't match his predicate(s)`);
         }
     }
 }
