@@ -15,7 +15,13 @@
         "type": "git",
         "url": "git+https://github.com/SlimIO/arg-checker.git"
     },
-    "keywords": [],
+    "keywords": [
+        "arg",
+        "checker",
+        "validation",
+        "validator",
+        "predicate"
+    ],
     "author": "SlimIO",
     "license": "MIT",
     "bugs": {
