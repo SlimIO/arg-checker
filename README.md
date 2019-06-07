@@ -31,7 +31,11 @@ function sayHello(name, age) {
     argc(name, [is.string, is.symbol]); // <-- Array stand for "OR" condition
     argc(age, is.number);
 }
+
 sayHello("fraxken", 24);
+// => No error
+sayHello(true);
+// => ArgumentError: 'name' doesn't match his predicate(s)
 ```
 
 ## API
@@ -39,7 +43,21 @@ sayHello("fraxken", 24);
 <details><summary>argc(arg: any, ...predicates: (argc.predicate | argc.predicate[])[]): void</summary>
 <br />
 
-TBC
+Check if **arg** match his predicates.
+
+```js
+const logValidInput = (input) => {
+    argc(input, is.number, (num) => num > 10 && num < 20);
+    // ...predicates are executing as && condition.
+    console.log(input);
+}
+
+logValidInput(15);
+// => No Error
+
+logValidInput(50);
+// => ArgumentError: 'input' doesn't match his predicate(s)
+```
 </details>
 
 ## Roadmap
