@@ -8,6 +8,10 @@ SlimIO Argument Checker. This package is inspired by [ow](https://github.com/sin
 ## Requirements
 - [Node.js](https://nodejs.org/en/) v10 or higher
 
+## Why ?
+- No built-in predicates/validation
+- No browser support (only Node.js).
+
 ## Getting Started
 
 This package is available in the Node Package Repository and can be easily installed with [npm](https://docs.npmjs.com/getting-started/what-is-npm) or [yarn](https://yarnpkg.com).
