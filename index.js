@@ -76,14 +76,16 @@ function argc(arg, ...predicates) {
         if (Array.isArray(predicate)) {
             const ret = predicate.some((fn) => fn(arg));
             if (!ret) {
-                throw new ArgumentError(`'${argumentLabel}' doesn't match his predicate(s)`);
+                const fnNames = predicate.map((fn) => fn.name || "anonymous");
+                throw new ArgumentError(`'${argumentLabel}' doesn't match one or many of: ${fnNames.join(", ")} predicate(s)`);
             }
         }
         else if (typeof predicate !== "function") {
             continue;
         }
         else if (!predicate(arg)) {
-            throw new ArgumentError(`'${argumentLabel}' doesn't match his predicate(s)`);
+            const fnName = predicate.name || "anonymous";
+            throw new ArgumentError(`'${argumentLabel}' doesn't match ${fnName} predicate`);
         }
     }
 }
