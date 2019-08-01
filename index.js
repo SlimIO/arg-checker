@@ -1,3 +1,5 @@
+"use strict";
+
 // Require Node.js Dependencies
 const { readFileSync } = require("fs");
 
@@ -54,11 +56,11 @@ function inferLabel(callsites) {
 
 /**
  * @class ArgumentError
- * @extends Error
+ * @augments Error
  */
 class ArgumentError extends Error {
     /**
-     * @constructor
+     * @class
      * @param  {...any} args args
      */
     constructor(...args) {
@@ -68,6 +70,11 @@ class ArgumentError extends Error {
     }
 }
 
+/**
+ * @function argc
+ * @param {*} arg *
+ * @param  {...any} predicates *
+ */
 function argc(arg, ...predicates) {
     const callStackFrames = callsites();
     const argumentLabel = inferLabel(callStackFrames) || "arg";

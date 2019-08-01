@@ -1,3 +1,5 @@
+"use strict";
+
 // CONSTANTS
 const RE_IDENTIFIER = /^[a-z$_][a-z$_0-9]*$/i;
 const RESERVED = new Set([

@@ -1,3 +1,5 @@
+"use strict";
+
 // Require Third-party Dependencies
 const avaTest = require("ava");
 const is = require("@slimio/is");
@@ -35,6 +37,11 @@ avaTest("argc must be string (return anonymous)", (assert) => {
 
 avaTest("argc must be string (return string predicate)", (assert) => {
     assert.plan(2);
+    /**
+     * @function isString
+     * @param {any} val *
+     * @returns {!boolean}
+     */
     function isString(val) {
         return typeof val === "string";
     }
@@ -54,9 +61,19 @@ avaTest("argc must be string (return string predicate)", (assert) => {
 
 avaTest("argc with multiple predicates", (assert) => {
     assert.plan(2);
+    /**
+     * @function isString
+     * @param {any} val *
+     * @returns {!boolean}
+     */
     function isString(val) {
         return typeof val === "string";
     }
+    /**
+     * @function isNumber
+     * @param {any} val *
+     * @returns {!boolean}
+     */
     function isNumber(val) {
         return typeof val === "number";
     }
