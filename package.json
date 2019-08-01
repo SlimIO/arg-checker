@@ -22,6 +22,11 @@
         "validator",
         "predicate"
     ],
+    "files": [
+        "index.js",
+        "index.d.ts",
+        "isValidIdentifier.js"
+    ],
     "author": "SlimIO",
     "license": "MIT",
     "bugs": {
