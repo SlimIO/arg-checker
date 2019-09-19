@@ -1,6 +1,6 @@
 {
     "name": "@slimio/arg-checker",
-    "version": "0.2.0",
+    "version": "0.2.1",
     "description": "SlimIO Argument Checker",
     "main": "index.js",
     "scripts": {
