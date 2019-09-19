@@ -72,8 +72,9 @@ class ArgumentError extends Error {
 
 /**
  * @function argc
- * @param {*} arg *
- * @param  {...any} predicates *
+ * @param {any} arg any kind of JavaScript primitives or Objects values
+ * @param {any[]} predicates predicates function (rest functions or rest array of functions)
+ * @returns {boolean}
  */
 function argc(arg, ...predicates) {
     const callStackFrames = callsites();
@@ -95,6 +96,8 @@ function argc(arg, ...predicates) {
             throw new ArgumentError(`'${argumentLabel}' doesn't match ${fnName} predicate`);
         }
     }
+
+    return true;
 }
 
 module.exports = argc;
