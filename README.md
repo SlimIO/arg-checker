@@ -1,12 +1,16 @@
 # arg-checker
-![version](https://img.shields.io/badge/version-0.1.0-blue.svg)
-[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/SlimIO/is/commit-activity)
+![version](https://img.shields.io/badge/dynamic/json.svg?url=https://raw.githubusercontent.com/SlimIO/arg-checker/master/package.json?token=AOgWw3vrgQuu-U4fz1c7yYZyc7XJPNtrks5catjdwA%3D%3D&query=$.version&label=Version)
+[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/SlimIO/arg-checker/commit-activity)
 ![MIT](https://img.shields.io/github/license/mashape/apistatus.svg)
+![dep](https://img.shields.io/david/SlimIO/arg-checker)
+![size](https://img.shields.io/github/languages/code-size/SlimIO/arg-checker)
+[![Known Vulnerabilities](https://snyk.io//test/github/SlimIO/arg-checker/badge.svg?targetFile=package.json)](https://snyk.io//test/github/SlimIO/arg-checker?targetFile=package.json)
+[![Build Status](https://travis-ci.com/SlimIO/arg-checker.svg?branch=master)](https://travis-ci.com/SlimIO/arg-checker)
 
 SlimIO Argument Checker. This package is inspired by [ow](https://github.com/sindresorhus/ow#readme) to retrieve the callsites but doesn't include any built-in predicates.
 
 ## Requirements
-- [Node.js](https://nodejs.org/en/) v10 or higher
+- [Node.js](https://nodejs.org/en/) v12 or higher
 
 ## Why ?
 - No built-in predicates/validation
