@@ -15,13 +15,12 @@ const RE_LABEL = /^.*?\((.*?)[,)]/;
 
 /**
  * @function inferLabel
- * @param {*} callsites callsites (V8 stack trace)
+ * @param {*} functionCallStackFrame functionCallStackFrame (V8 stack trace)
  * @returns {string}
  *
  * @see Method inspired by infer-label.ts in https://github.com/sindresorhus/ow package
  */
-function inferLabel(callsites) {
-    const functionCallStackFrame = callsites[1];
+function inferLabel(functionCallStackFrame) {
     const fileName = functionCallStackFrame.getFileName();
     const lineNumber = functionCallStackFrame.getLineNumber();
     const columnNumber = functionCallStackFrame.getColumnNumber();
@@ -78,13 +77,14 @@ class ArgumentError extends Error {
  */
 function argc(arg, ...predicates) {
     const callStackFrames = callsites();
-    const argumentLabel = inferLabel(callStackFrames) || "arg";
 
     for (const predicate of predicates) {
         if (Array.isArray(predicate)) {
             const ret = predicate.some((fn) => fn(arg));
             if (!ret) {
                 const fnNames = predicate.map((fn) => fn.name || "anonymous");
+                const argumentLabel = inferLabel(callStackFrames[1]) || inferLabel(callStackFrames[2]) || "arg";
+
                 throw new ArgumentError(`'${argumentLabel}' doesn't match one or many of: ${fnNames.join(", ")} predicate(s)`);
             }
         }
@@ -93,6 +93,8 @@ function argc(arg, ...predicates) {
         }
         else if (!predicate(arg)) {
             const fnName = predicate.name || "anonymous";
+            const argumentLabel = inferLabel(callStackFrames[1]) || inferLabel(callStackFrames[2]) || "arg";
+
             throw new ArgumentError(`'${argumentLabel}' doesn't match ${fnName} predicate`);
         }
     }

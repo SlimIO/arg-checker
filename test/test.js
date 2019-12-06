@@ -87,6 +87,6 @@ avaTest("argc with multiple predicates", (assert) => {
     }
     catch (err) {
         assert.is(err.name, "ArgumentError");
-        assert.is(err.message, "'arg' doesn't match one or many of: isString, isNumber predicate(s)");
+        assert.is(err.message, "'input' doesn't match one or many of: isString, isNumber predicate(s)");
     }
 });
