@@ -5,7 +5,8 @@
 ![dep](https://img.shields.io/david/SlimIO/arg-checker)
 ![size](https://img.shields.io/github/languages/code-size/SlimIO/arg-checker)
 [![Known Vulnerabilities](https://snyk.io//test/github/SlimIO/arg-checker/badge.svg?targetFile=package.json)](https://snyk.io//test/github/SlimIO/arg-checker?targetFile=package.json)
-[![Build Status](https://travis-ci.com/SlimIO/arg-checker.svg?branch=master)](https://travis-ci.com/SlimIO/arg-checker) [![Greenkeeper badge](https://badges.greenkeeper.io/SlimIO/arg-checker.svg)](https://greenkeeper.io/)
+[![Build Status](https://travis-ci.com/SlimIO/arg-checker.svg?branch=master)](https://travis-ci.com/SlimIO/arg-checker)
+[![Greenkeeper badge](https://badges.greenkeeper.io/SlimIO/arg-checker.svg)](https://greenkeeper.io/)
 
 SlimIO Argument Checker. This package is inspired by [ow](https://github.com/sindresorhus/ow#readme) to retrieve the callsites but doesn't include any built-in predicates.
 
