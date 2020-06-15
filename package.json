@@ -35,7 +35,7 @@
     "homepage": "https://github.com/SlimIO/arg-checker#readme",
     "dependencies": {
         "callsites": "^3.1.0",
-        "clean-stack": "^2.2.0"
+        "clean-stack": "^3.0.0"
     },
     "devDependencies": {
         "@commitlint/cli": "^8.3.5",
